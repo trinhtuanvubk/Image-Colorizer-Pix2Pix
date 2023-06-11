@@ -33,26 +33,27 @@ def OnlyImageLoader(opt, image_path):
         image_path = opt.image_path 
 
     img = Image.open(image_path).convert('RGB')
-    transform_params = get_params(opt, img.size)
+    original_size = img.size
+    transform_params = get_params(opt, original_size)
     transforms = get_transform(opt, transform_params, grayscale=(opt.input_nc == 1) )
     img = transforms(img)
 
     return img
 
-image_path = "./own_data/A/test/otomegesekai_ch72_07-2.png"
-img = OnlyImageLoader(opt, image_path)
-img = torch.unsqueeze(img, 0)
-print(img)
-print(img.shape)
+# image_path = "./own_data/A/test/otomegesekai_ch72_07-2.png"
+# img = OnlyImageLoader(opt, image_path)
+# img = torch.unsqueeze(img, 0)
+# print(img)
+# print(img.shape)
     
-fake = model.netG(img.to("cpu"))
+# fake = model.netG(img.to("cpu"))
 
 
-_fake = tensor2im(fake)
-print(fake.shape)
-save_image(_fake, "fake.png")
+# _fake = tensor2im(fake)
+# print(fake.shape)
+# save_image(_fake, "fake.png")
 
 
-_real = tensor2im(img)
-save_image(_real, "real.png")
+# _real = tensor2im(img)
+# save_image(_real, "real.png")
     
