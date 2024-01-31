@@ -1,3 +1,7 @@
+test_data/
+ckpt
+vutt_result/
+*own*data/
 .DS_Store
 debug*
 datasets/
