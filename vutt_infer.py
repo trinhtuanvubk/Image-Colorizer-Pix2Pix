@@ -56,6 +56,6 @@ for image_path in images_dir:
 
     save_path = os.path.join("./vutt_result", f'{name}.jpg')
     print(save_path)
-    util.save_image(out_image, save_path, aspect_ratio=opt.aspect_ratio)
+    util.save_image(out_image, save_path, aspect_ratio=opt.aspect_ratio, out_size=300)
 
    
